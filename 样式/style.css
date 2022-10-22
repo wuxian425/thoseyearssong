@@ -1,0 +1,364 @@
+
+  /* CSS Designed by BobYang */
+  
+  /* ---------- 亮色主题 ---------*/
+  :root {
+    --primary-color: #80a0b0;
+    --primary-dark-color: #406070;
+    --primary-text-color: #ffffff;
+    
+    --background-color: #cccccc; 
+    --container-background-color: #fcfcfc;
+    
+    --nav-background-color: #ffffff;
+    --nav-title-color: #000000;
+    
+    --font-color: #0c0c0c;
+    --link-color: #666666;
+    
+    --scrollbar-background-color: #608090;
+    --scrollbar-thumb-background-color: #406070;
+  }
+  
+  /* ---------- 暗色主题 ---------*/
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #609060;
+      --primary-dark-color: #306030;
+      --primary-text-color: #ffffff;
+    
+      --background-color: #060606;
+      --container-background-color: #0a0a0a;
+    
+      --nav-background-color: #060606;
+      --nav-title-color: #fcfcfc;
+    
+      --font-color: #fcfcfc;
+      --link-color: #306030;
+    
+      --scrollbar-background-color: #306030;
+      --scrollbar-thumb-background-color: #104010;
+    }
+  }
+  
+  
+  /* ---------- 总体设置 ---------- */
+  body {
+    background: var(--background-color);
+    color: var(--font-color);
+    font-size: 14px;
+    font-family: 宋体, Serif, SimHei;
+    line-height: 1.2;
+  }
+  
+  /* ---------- 标题 ---------- */
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+  
+  /* ---------- 链接 ---------- */
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+      
+  a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  
+  /* ---------- 文字 ---------- */
+  p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  
+  /* ---------- 无序列表 ----------*/
+  ul {
+    list-style: square;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+  }
+  
+  li {
+    margin-bottom: 2px;
+  }
+  
+  /* ---------- 按钮 ----------*/
+  button {
+    background: var(--primary-color);
+    border: 0;
+    border-bottom: 2px solid var(--primary-dark-color);
+    border-radius: 2px;
+    box-shadow: none;
+    color: var(--primary-text-color);
+    font-family: 宋体, SimHei, Sans Serif;
+    padding: 2px 4px;
+    user-select: none;
+      -webkit-user-select: none;
+  }
+  
+  button:hover {
+    background: var(--primary-dark-color);
+    border-bottom: 1px solid var(--primary-dark-color);
+    color: var(--primary-dark-color);
+  }
+  
+  /* ---------- 折叠信息 ---------- */
+  summary {
+    margin-bottom: 2px;
+    user-select: none;
+      -webkit-user-select: none;
+  }
+  
+  summary:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  /* ---------- 嵌入页面 ---------- */
+  iframe {
+    width: 480px;
+    height: 270px;
+  }
+  
+  /* ---------- 页面容器 ---------- */
+  .container {
+    background: var(--container-background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    width: 800px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+  
+  @media (max-width: 840px) {
+    .container {
+      width: auto;
+    }
+  }
+  
+  /* ---------- 导航栏 ---------- */
+  .navbar {
+    background: var(--nav-background-color);
+    border: 1px solid var(--primary-color);
+    display: block;
+    padding: 2px 4px;
+    
+    position: relative;
+    top: -16px;
+  }
+  
+  /* 浮动清除 */
+  .navbar:before,
+  .navbar:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+    
+    /* 导航栏标题 */
+    .navbar .navbar-title, 
+    .navbar .navbar-title a {
+      display: inline;
+      float: left;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+      
+      color: var(--primary-dark-color);
+      text-shadow: 0 0 2px var(--primary-dark-color);
+    }
+    
+      .navbar .navbar-title a:hover {
+        color: var(--primary-dark-color);
+        text-decoration: none;
+        text-shadow: 1px -1px 4px var(--primary-dark-color);
+      }
+    
+    /* 导航栏项目组 */
+    .navbar .navbar-item-group {
+      float: right;
+      font-size: 16px;
+    }
+  
+  /* ---------- 内容容器 ---------- */
+  .main {
+    -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    margin-left: -4px;
+    margin-right: -4px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 8px;
+    
+    /* 火狐浏览器的滚动条 */
+    scrollbar-color: var(--scrollbar-thumb-background-color) var(--scrollbar-background-color) ;
+    scrollbar-width: thin;
+  }
+  
+  /* 浮动清除 */
+  .main:before,
+  .main:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+    /* 谷铬浏览器（什么奇异混合）的滚动条 */
+    .main::-webkit-scrollbar {
+      background-color: var(--scrollbar-background-color);
+      box-shadow: 0px 0px 2px var(--scrollbar-background-color);
+      width: 6px;
+    }
+  
+    /* 趣事：在编写这个 CSS 时，Chrome 滚动条上的高光阴影渲染有点小问题（Chrome 105） */
+    .main::-webkit-scrollbar-thumb {
+      box-shadow: 0px 0px 1px var(--scrollbar-thumb-background-color);
+      background-color: var(--scrollbar-thumb-background-color);
+    }
+  
+  /* ---------- 简易网格 ----------*/
+  [class*="col-"] {
+    -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    display: block;
+    float: left;
+    padding: 4px;
+    padding-top: 0;
+  }
+
+  .col-1 {width: 25%;}
+  .col-2 {width: 50%;}
+  .col-3 {width: 75%;}
+  .col-4 {width: 100%;}
+  
+  @media (max-width: 840px) {
+    .col-1 {width: 100%;}
+    .col-2 {width: 100%;}
+    .col-3 {width: 100%;}
+    .col-4 {width: 100%;}
+  }
+  
+  /* ---------- 卡片容器 ----------*/
+  .card {
+    border: 1px dotted var(--primary-color);
+    -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+    padding: 6px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .card:hover{
+    border: 1px solid var(--primary-dark-color);
+  }
+  
+    /* 卡片标题 */
+    .card .card-title {
+      background: var(--primary-color);
+      color: var(--primary-text-color);
+      display: inline;
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 4px;
+      padding: 4px;
+      position: relative;
+      
+      top: -8px;
+    }
+    
+    /* 卡片按钮 */
+    .card .card-button {
+      background: var(--primary-color);
+      border: 0;
+      border-bottom: 2px solid var(--primary-dark-color);
+      border-radius: 2px;
+      box-shadow: none;
+      color: var(--primary-text-color);
+      padding: 2px 4px;
+      text-decoration: none;
+      user-select: none;
+        -webkit-user-select: none;
+      
+      position: absolute; 
+      bottom: -14px;
+      right: 16px;
+    }
+    
+    .card .card-button:hover {
+      border-bottom: 1px solid var(--primary-dark-color);
+    }
+  
+  /* ---------- 文章 ---------- */
+  .article {
+    max-height: 200px;
+    overflow: auto;
+    
+    /* 火狐浏览器的滚动条 */
+    scrollbar-color: var(--scrollbar-thumb-background-color) var(--scrollbar-background-color) ;
+    scrollbar-width: thin;
+  }
+  
+    /* 谷铬浏览器（什么奇异混合）的滚动条 */
+    .article::-webkit-scrollbar {
+      background-color: var(--scrollbar-background-color);
+      box-shadow: 0px 0px 2px var(--scrollbar-background-color);
+      width: 6px;
+    }
+  
+    /* 趣事：在编写这个 CSS 时，Chrome 滚动条上的高光阴影渲染有点小问题（Chrome 105） */
+    .article::-webkit-scrollbar-thumb {
+      box-shadow: 0px 0px 1px var(--scrollbar-thumb-background-color);
+      background-color: var(--scrollbar-thumb-background-color);
+    }
+  
+  /* ---------- 巨幕 ---------- */
+  .jumbotron {
+    margin-top: 2px;
+    margin-bottom: 16px;
+  }
+  
+  .jumbotron h1 {
+    font-family: SimHei;
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .jumbotron p {
+    font-family: SimHei;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* ---------- 火！标签 ---------- */
+  [hot]:before {
+    font-size: 12px;
+    content: '推荐';
+    border: 1px solid red;
+    color: red;
+    margin-left: 2px;
+    margin-right: 2px;
+    
+    user-select: none;
+      -webkit-user-select: none;
+  }
+  
+  /* ---------- 警告！ ---------- */
+  .warning {
+    color: red;
+  }
+  
+  /* ---------- 页脚 ---------- */
+  .footer {
+    font-size: 12px;
+    text-align: center;
+  }
