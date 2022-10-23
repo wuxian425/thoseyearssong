@@ -161,10 +161,15 @@
     clear: both;
   }
     
+    .navbar .navbar-title a:after {
+      content: '那些年，我们的青春。';
+      display: inline;
+    }
+    
     /* 导航栏标题 */
     .navbar .navbar-title, 
     .navbar .navbar-title a {
-      display: inline;
+      display: inline-block;
       float: left;
       font-size: 16px;
       font-weight: bold;
@@ -190,13 +195,13 @@
   .main {
     -webkit-box-sizing: border-box;
       box-sizing: border-box;
+    height: auto;
     margin-left: -4px;
     margin-right: -4px;
-    margin-top: 4px;
+    margin-top: 0;
     margin-bottom: 6px;
     overflow-x: hidden;
-    overflow-y: auto;
-    padding-top: 8px;
+    overflow-y: visible;
     
     /* 火狐浏览器的滚动条 */
     scrollbar-color: var(--scrollbar-thumb-background-color) var(--scrollbar-background-color) ;
@@ -232,6 +237,8 @@
     float: left;
     padding: 4px;
     padding-top: 0;
+    margin-top: 6px;
+    margin-bottom: 8px;
   }
 
   .col-1 {width: 25%;}
@@ -252,7 +259,6 @@
     -webkit-box-sizing: border-box;
       box-sizing: border-box;
     display: block;
-    margin-bottom: 10px;
     padding: 6px;
     position: relative;
     width: 100%;
@@ -260,6 +266,13 @@
   
   .card:hover{
     border: 1px solid var(--primary-dark-color);
+  }
+  
+  .card-row:before,
+  .card-row:after {
+    content: '';
+    display: table;
+    clear: both;
   }
   
     /* 卡片标题 */
@@ -274,13 +287,14 @@
       position: relative;
       
       top: -8px;
+      left: 4px;
     }
     
     /* 卡片按钮 */
     .card .card-button {
       background: var(--primary-color);
       border: 0;
-      border-bottom: 2px solid var(--primary-dark-color);
+      border-bottom: 1px solid var(--primary-dark-color);
       border-radius: 2px;
       box-shadow: none;
       color: var(--primary-text-color);
@@ -290,12 +304,12 @@
         -webkit-user-select: none;
       
       position: absolute; 
-      bottom: -14px;
-      right: 16px;
+      bottom: -12px;
+      right: 12px;
     }
     
     .card .card-button:hover {
-      border-bottom: 1px solid var(--primary-dark-color);
+      border-bottom: 0;
     }
   
   /* ---------- 文章 ---------- */
